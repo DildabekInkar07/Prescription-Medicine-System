@@ -94,4 +94,6 @@ status nvarchar(20) not null default 'pending',
 foreign key (prescription_medicine_id) references prescription_medicines(prescription_medicine_id),
 check (status in ('pending','taken','missed'))
 );
+create table student(
+  student_id int identity(1,1) primary key);
 go
