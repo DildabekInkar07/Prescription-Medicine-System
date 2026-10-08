@@ -1,37 +1,10 @@
-USE PrescriptionMedicineDB;
-GO
-
-/* ==========================================
-   5. UPDATE - МӘЛІМЕТТІ ӨЗГЕРТУ
-   ========================================== */
-
-/* Дәрінің бағасын өзгерту */
-UPDATE medicines
-SET price = 3700
-WHERE medicine_id = 1;
-
-
-/* Дәрі қорын өзгерту */
-UPDATE pharmacy_inventory
-SET quantity = 19
-WHERE pharmacy_id = 1
-AND medicine_id = 1;
-
-
-/* Бронь статусын өзгерту */
-UPDATE bookings
-SET status = 'received'
-WHERE booking_id = 1;
-
-
-/* Қабылдау статусын өзгерту */
-UPDATE intake_schedule
-SET status = 'taken'
-WHERE schedule_id = 1;
-
-
-/* UPDATE нәтижесін тексеру */
-SELECT * FROM medicines;
-SELECT * FROM pharmacy_inventory;
-SELECT * FROM bookings;
-SELECT * FROM intake_schedule;
+use PrescriptionMedicineDB;
+go
+update medicines set price=3700 where medicine_id=1;
+update pharmacy_inventory set quantity=19 where pharmacy_id=1 and medicine_id=1;
+update bookings set status='received' where booking_id=1;
+update intake_schedule set status='taken' where schedule_id=1;
+select * from medicines;
+select * from pharmacy_inventory;
+select * from bookings;
+select * from intake_schedule;
