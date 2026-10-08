@@ -1,25 +1,6 @@
-USE PrescriptionMedicineDB;
-GO
-
-/* ==========================================
-   6. DELETE - МӘЛІМЕТТІ ЖОЮ
-   ========================================== */
-
-/*
-   Негізгі деректерді бұзбау үшін
-   уақытша дәрі қосамыз.
-*/
-
-INSERT INTO medicines
-(medicine_name, manufacturer, price)
-VALUES
-(N'Тест дәрі', N'Test Company', 500);
-
-
-/* Тест дәріні өшіру */
-DELETE FROM medicines
-WHERE medicine_name = N'Тест дәрі';
-
-
-/* DELETE нәтижесін тексеру */
-SELECT * FROM medicines;
+use PrescriptionMedicineDB;
+go
+insert into medicines (medicine_name,manufacturer,price) values
+(N'Тест дәрі',N'Test Company',500);
+delete from medicines where medicine_name=N'Тест дәрі';
+select * from medicines;
