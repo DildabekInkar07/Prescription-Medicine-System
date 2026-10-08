@@ -1,0 +1,152 @@
+@startuml
+
+class "Пайдаланушы" as User {
+    + user_id: int
+    + логин: string
+    + құпияСөз: string
+    + атыЖөні: string
+    + телефон: string
+    + тіркелгенКүні: date
+    + рөлі: string
+    --
+    + жүйегеКіру(): bool
+    + профильдіЖаңарту(): void
+    + шығу(): void
+}
+
+class "Пациент" as Patient {
+    + ЖСН: string
+    + медициналықКартаНөмірі: string
+    + мекенжайы: string
+    --
+    + рецепттіКөру(): list
+    + брондауЖасау(): void
+    + қабылдауКестесінКөру(): void
+}
+
+class "Дәрігер" as Doctor {
+    + мамандығы: string
+    + кабинетНөмірі: string
+    --
+    + рецептЖазу(): void
+    + рецептӨзгерту(): void
+    + пациентАқпаратКөру(): void
+}
+
+class "Фармацевт" as Pharmacist {
+    + дәріхана_id: int
+    + лауазымы: string
+    --
+    + рецепттіТексеру(): bool
+    + дәрініБеру(): void
+    + броньдыӨңдеу(): void
+    + қорТексеру(): void
+}
+
+class "Әкімші" as Admin {
+    + бөлім: string
+    --
+    + пайдаланушыҚосу(): void
+    + пайдаланушыБақылау(): void
+    + дәріханаҚосу(): void
+    + дәріҚосу(): void
+    + есепШығару(): void
+}
+
+class "Рецепт" as Prescription {
+    + рецепт_id: int
+    + берілгенКүні: date
+    + жарамдылықМерзімі: date
+    + диагнозы: string
+    + ескертпе: string
+    + статус: string
+    --
+    + жарамдылығынТексеру(): bool
+    + мәртебеніӨзгерту(): void
+}
+
+class "Бронь" as Booking {
+    + бронь_id: int
+    + жасалғанКүні: date
+    + статус: string
+    + QR_код: string
+    --
+    + броньЖасау(): void
+    + броньБолдырмау(): void
+    + QR_кодГенерациялау(): void
+}
+
+class "Дәріхана" as Pharmacy {
+    + дәріхана_id: int
+    + атауы: string
+    + мекенжайы: string
+    + телефон: string
+    + жұмысУақыты: string
+    --
+    + қолжетімдіДәрілерКөру(): list
+    + броньТексеру(): bool
+    + дәрініДайындау(): void
+}
+
+class "Дәрі" as Medicine {
+    + дәрі_id: int
+    + атауы: string
+    + сипаттамасы: string
+    + өндіруші: string
+    + бағасы: float
+    --
+    + мәліметКөру(): void
+    + жаңарту(): void
+}
+
+class "РецепттегіДәрі" as PrescriptionMedicine {
+    + id: int
+    + дозасы: string
+    + қабылдауТәртібі: string
+    + ұзақтығы: int
+    --
+    + мәліметКөру(): void
+    + өзгерту(): void
+}
+
+class "ҚабылдауКестесі" as Schedule {
+    + кесте_id: int
+    + басталуУақыты: datetime
+    + жиілігі: string
+    + мәртебесі: string
+    --
+    + ескеСалуЖіберу(): void
+    + орындалды(): void
+}
+
+class "ДәріҚоры" as Inventory {
+    + id: int
+    + саны: int
+    + жарамдылықКүні: date
+    --
+    + санынЖаңарту(): void
+    + қолжетімдіМе(): bool
+}
+
+User <|-- Patient
+User <|-- Doctor
+User <|-- Pharmacist
+User <|-- Admin
+
+Patient "1" -- "0..*" Prescription : алады
+Doctor "1" -- "0..*" Prescription : жазады
+
+Prescription "1" *-- "0..*" Booking : негізінде
+Booking "0..*" -- "1" Pharmacy : жасалады
+
+Prescription "1" -- "1..*" PrescriptionMedicine : құрамында
+
+Medicine "1" -- "0..*" PrescriptionMedicine : қолданылады
+
+PrescriptionMedicine "1" -- "0..*" Schedule : бойынша
+
+Medicine "1" -- "0..*" Inventory : қорда бар
+
+Pharmacy "1" -- "0..*" Inventory : сақтайды
+
+@enduml

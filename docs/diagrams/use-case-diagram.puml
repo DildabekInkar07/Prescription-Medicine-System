@@ -1,0 +1,69 @@
+@startuml
+left to right direction
+
+actor "Пациент" as Patient
+actor "Дәрігер" as Doctor
+actor "Фармацевт" as Pharmacist
+actor "Жүйе әкімшісі" as Admin
+
+rectangle "Рецепттік дәрі-дәрмектерді тағайындау, алу және қабылдауды бақылау АЖ" {
+
+    usecase "Қабылдау тарихын көру" as UC1
+    usecase "Электрондық рецептті көру" as UC2
+    usecase "Дәрі қорын іздеу" as UC3
+    usecase "Филиалды таңдау" as UC4
+    usecase "Дәріні онлайн брондау" as UC5
+    usecase "Қабылдауды растау\n(«Қабылдадым»)" as UC6
+
+    usecase "Хабарлама жіберу\n(QR / Push)" as UC7
+    usecase "Броньды тіркеу" as UC8
+    usecase "Дәрі қорын тексеру" as UC9
+
+    usecase "Кезеңдік рецептті\nқайта бағалау" as UC10
+    usecase "Жүйеге кіру" as UC11
+    usecase "Электрондық рецепт тағайындау" as UC12
+    usecase "Емдеу кестесін бекіту" as UC13
+    usecase "Қабылдау ауытқуларын қарау" as UC14
+
+    usecase "Жаңа броньдарды көру" as UC15
+    usecase "Дәріні жинақтау және дайындау" as UC16
+    usecase "QR-кодты сканерлеу" as UC17
+    usecase "Дәріні босатуды растау" as UC18
+
+    usecase "Журналдарды қарау" as UC19
+    usecase "Пайдаланушыларды басқару" as UC20
+    usecase "Филиалдарды басқару" as UC21
+    usecase "Жүйе параметрлерін баптау" as UC22
+}
+
+Patient -- UC1
+Patient -- UC2
+Patient -- UC3
+Patient -- UC4
+Patient -- UC5
+Patient -- UC6
+Patient -- UC11
+
+UC5 ..> UC7 : <<include>>
+UC5 ..> UC8 : <<include>>
+UC5 ..> UC9 : <<include>>
+
+Doctor -- UC10
+Doctor -- UC11
+Doctor -- UC12
+Doctor -- UC14
+
+UC12 ..> UC13 : <<include>>
+
+Pharmacist -- UC15
+Pharmacist -- UC16
+Pharmacist -- UC17
+
+UC17 ..> UC18 : <<include>>
+
+Admin -- UC19
+Admin -- UC20
+Admin -- UC21
+Admin -- UC22
+
+@enduml
