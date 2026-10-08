@@ -1,0 +1,356 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Страница-1" id="0fB1Hr3szD1qz4gRf7uf">
+    <mxGraphModel dx="1030" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" plantUmlData="{&#xa;  &quot;data&quot;: &quot;@startuml\n\ntitle Рецепт бойынша дәріні брондау және алу процесінің секвенс диаграммасы\\n(пациенттің қолында рецепт бар)\n\nactor Пациент as Patient\nparticipant \&quot;Мобильді\\nқосымша\&quot; as App\nparticipant \&quot;Дәрігер\&quot; as Doctor\nparticipant \&quot;Фармацевт\\n(Дәріхана)\&quot; as Pharmacist\nparticipant \&quot;Брондау жүйесі\&quot; as Booking\ndatabase \&quot;Деректер\\nбазасы\&quot; as DB\n\nPatient -&gt; App : Рецептті таңдау\\n(рецепт бар)\n\nApp -&gt; Booking : Рецепт деректерін сұрау\\n(QR-код немесе қолмен енгізу)\nBooking -&gt; DB : Рецептті іздеу (ID)\nDB --&gt; Booking : Рецепт мәліметтері\nBooking --&gt; App : Рецептті көрсету\n\nPatient -&gt; App : Дәріханаларды іздеу\\nжәне брондау\n\nApp -&gt; Booking : Жақын дәріханаларды сұрау\\nжәне қолжетімділікті тексеру\nBooking -&gt; DB : Дәрі қорын тексеру\nDB --&gt; Booking : Қор мәліметтері\nBooking --&gt; App : Дәріханалар тізімі\\n(қолжетімділік)\n\nPatient -&gt; App : Дәріхананы таңдап,\\n\&quot;Брондау\&quot; басу\n\nApp -&gt; Booking : Бронь жасау сұранысы\\n(рецепт ID, дәріхана, препарат)\nBooking -&gt; DB : Броньды сақтау\nDB --&gt; Booking : Бронь ID\nBooking --&gt; App : Бронь сәтті жасалды\n\nPatient -&gt; Pharmacist : Дәріханаға келіп,\\nрецепт пен броньды көрсету\n\nPharmacist -&gt; DB : Рецептті тексеру\\n(жарамдылығы, сәйкестігі)\nDB --&gt; Pharmacist : Рецепт және бронь мәліметтері\n\nPharmacist -&gt; Booking : Дәріні беру\nBooking -&gt; DB : Алғаны туралы ақпаратты сақтау\nDB --&gt; Booking : Сақталды\n\nPharmacist --&gt; Patient : Дәрі берілді\\n(QR-код расталды)\n\nPharmacist --&gt; Doctor : Хабарлама\nDoctor -&gt; App : Қабылдау бұзылған жағдайда\\nхабарлама жіберу\nDoctor --&gt; App : Ұсыныс / жаңа рецепт\nApp --&gt; Patient : Хабарлама және ұсыныс\n\n@enduml&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="xD6Xstj7F4duOIKthSjx-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="pl_0" plantUmlBaseStyle="shape=umlLifeline;perimeter=lifelinePerimeter;participant=none;size=57;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=none;strokeColor=#181818;strokeWidth=0.5;" plantUmlBaseValue="" id="xD6Xstj7F4duOIKthSjx-2">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-1" style="shape=umlLifeline;perimeter=lifelinePerimeter;participant=none;size=57;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=none;strokeColor=#181818;strokeWidth=0.5;" vertex="1">
+            <mxGeometry height="1131" width="55.3" x="30" y="84" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Пациент" plantUmlId="p_32" plantUmlBaseStyle="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;part=1;" plantUmlBaseValue="Пациент" id="xD6Xstj7F4duOIKthSjx-3">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-2" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;part=1;" vertex="1">
+            <mxGeometry height="38" width="24" x="15.649999999999999" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Пациент" plantUmlId="pf_33" plantUmlBaseStyle="shape=umlActor;verticalLabelPosition=top;verticalAlign=bottom;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;part=1;" plantUmlBaseValue="Пациент" id="xD6Xstj7F4duOIKthSjx-4">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-2" style="shape=umlActor;verticalLabelPosition=top;verticalAlign=bottom;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;part=1;" vertex="1">
+            <mxGeometry height="38" width="24" x="15.649999999999999" y="1093" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Мобильді&#xa;қосымша" plantUmlId="p_1" plantUmlBaseStyle="shape=umlLifeline;perimeter=lifelinePerimeter;size=48;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" plantUmlBaseValue="Мобильді&#xa;қосымша" id="xD6Xstj7F4duOIKthSjx-5">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-1" style="shape=umlLifeline;perimeter=lifelinePerimeter;size=48;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="1113" width="77.19999999999999" x="191.6551571428572" y="93" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Дәрігер" plantUmlId="p_2" plantUmlBaseStyle="shape=umlLifeline;perimeter=lifelinePerimeter;size=48;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" plantUmlBaseValue="Дәрігер" id="xD6Xstj7F4duOIKthSjx-6">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-1" style="shape=umlLifeline;perimeter=lifelinePerimeter;size=48;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="1113" width="69.3" x="404.88888571428583" y="93" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Фармацевт&#xa;(Дәріхана)" plantUmlId="p_3" plantUmlBaseStyle="shape=umlLifeline;perimeter=lifelinePerimeter;size=48;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" plantUmlBaseValue="Фармацевт&#xa;(Дәріхана)" id="xD6Xstj7F4duOIKthSjx-7">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-1" style="shape=umlLifeline;perimeter=lifelinePerimeter;size=48;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="1113" width="86.30539999999999" x="487.40761428571443" y="93" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Брондау жүйесі" plantUmlId="p_4" plantUmlBaseStyle="shape=umlLifeline;perimeter=lifelinePerimeter;size=48;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" plantUmlBaseValue="Брондау жүйесі" id="xD6Xstj7F4duOIKthSjx-8">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-1" style="shape=umlLifeline;perimeter=lifelinePerimeter;size=48;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="1113" width="121.12970000000003" x="583.7130142857145" y="93" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="pl_5" plantUmlBaseStyle="shape=umlLifeline;perimeter=lifelinePerimeter;participant=none;size=72;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=none;strokeColor=#181818;strokeWidth=0.5;" plantUmlBaseValue="" id="xD6Xstj7F4duOIKthSjx-9">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-1" style="shape=umlLifeline;perimeter=lifelinePerimeter;participant=none;size=72;lifelineMirror=1;dashPattern=5 5;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;sequenceEdgeStyle&quot;,&quot;libavoidRouting&quot;:0,&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=none;strokeColor=#181818;strokeWidth=0.5;" vertex="1">
+            <mxGeometry height="1161" width="63.199999999999996" x="848.0820285714289" y="69" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Деректер&#xa;базасы" plantUmlId="p_34" plantUmlBaseStyle="shape=cylinder3;size=6;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;part=1;" plantUmlBaseValue="Деректер&#xa;базасы" id="xD6Xstj7F4duOIKthSjx-10">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-9" style="shape=cylinder3;size=6;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;part=1;" vertex="1">
+            <mxGeometry height="34" width="36" x="13.600000000000023" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Деректер&#xa;базасы" plantUmlId="pf_35" plantUmlBaseStyle="shape=cylinder3;size=6;verticalLabelPosition=top;verticalAlign=bottom;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;part=1;" plantUmlBaseValue="Деректер&#xa;базасы" id="xD6Xstj7F4duOIKthSjx-11">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-9" style="shape=cylinder3;size=6;verticalLabelPosition=top;verticalAlign=bottom;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;part=1;" vertex="1">
+            <mxGeometry height="34" width="36" x="13.600000000000023" y="1127" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Рецептті таңдау&#xa;(рецепт бар)" plantUmlId="msg_6" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Рецептті таңдау&#xa;(рецепт бар)" id="xD6Xstj7F4duOIKthSjx-12">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-2" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-5">
+            <mxGeometry relative="1" x="-0.3" as="geometry">
+              <Array as="points">
+                <mxPoint x="144" y="191" />
+              </Array>
+              <mxPoint x="57.65" y="191" as="sourcePoint" />
+              <mxPoint x="230.2551571428572" y="191" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Рецепт деректерін сұрау&#xa;(QR-код немесе қолмен енгізу)" plantUmlId="msg_7" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Рецепт деректерін сұрау&#xa;(QR-код немесе қолмен енгізу)" id="xD6Xstj7F4duOIKthSjx-13">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-5" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-8">
+            <mxGeometry relative="1" x="-0.481" as="geometry">
+              <Array as="points">
+                <mxPoint x="437" y="238" />
+              </Array>
+              <mxPoint x="230.2551571428572" y="238" as="sourcePoint" />
+              <mxPoint x="644.2778642857145" y="238" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Рецептті іздеу (ID)" plantUmlId="msg_8" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Рецептті іздеу (ID)" id="xD6Xstj7F4duOIKthSjx-14">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-8" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-9">
+            <mxGeometry relative="1" x="-0.407" as="geometry">
+              <Array as="points">
+                <mxPoint x="762" y="270" />
+              </Array>
+              <mxPoint x="644.2778642857145" y="270" as="sourcePoint" />
+              <mxPoint x="879.6820285714289" y="270" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Рецепт мәліметтері" plantUmlId="msg_9" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Рецепт мәліметтері" id="xD6Xstj7F4duOIKthSjx-15">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-9" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-8">
+            <mxGeometry relative="1" x="0.308" as="geometry">
+              <Array as="points">
+                <mxPoint x="762" y="302" />
+              </Array>
+              <mxPoint x="879.6820285714289" y="302" as="sourcePoint" />
+              <mxPoint x="644.2778642857145" y="302" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Рецептті көрсету" plantUmlId="msg_10" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Рецептті көрсету" id="xD6Xstj7F4duOIKthSjx-16">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-8" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-5">
+            <mxGeometry relative="1" x="0.642" as="geometry">
+              <Array as="points">
+                <mxPoint x="437" y="334" />
+              </Array>
+              <mxPoint x="644.2778642857145" y="334" as="sourcePoint" />
+              <mxPoint x="230.2551571428572" y="334" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Дәріханаларды іздеу&#xa;және брондау" plantUmlId="msg_11" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дәріханаларды іздеу&#xa;және брондау" id="xD6Xstj7F4duOIKthSjx-17">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-2" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-5">
+            <mxGeometry relative="1" x="-0.13" as="geometry">
+              <Array as="points">
+                <mxPoint x="144" y="381" />
+              </Array>
+              <mxPoint x="57.65" y="381" as="sourcePoint" />
+              <mxPoint x="230.2551571428572" y="381" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Жақын дәріханаларды сұрау&#xa;және қолжетімділікті тексеру" plantUmlId="msg_12" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Жақын дәріханаларды сұрау&#xa;және қолжетімділікті тексеру" id="xD6Xstj7F4duOIKthSjx-18">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-5" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-8">
+            <mxGeometry relative="1" x="-0.486" as="geometry">
+              <Array as="points">
+                <mxPoint x="437" y="428" />
+              </Array>
+              <mxPoint x="230.2551571428572" y="428" as="sourcePoint" />
+              <mxPoint x="644.2778642857145" y="428" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Дәрі қорын тексеру" plantUmlId="msg_13" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дәрі қорын тексеру" id="xD6Xstj7F4duOIKthSjx-19">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-8" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-9">
+            <mxGeometry relative="1" x="-0.407" as="geometry">
+              <Array as="points">
+                <mxPoint x="762" y="460" />
+              </Array>
+              <mxPoint x="644.2778642857145" y="460" as="sourcePoint" />
+              <mxPoint x="879.6820285714289" y="460" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Қор мәліметтері" plantUmlId="msg_14" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Қор мәліметтері" id="xD6Xstj7F4duOIKthSjx-20">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-9" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-8">
+            <mxGeometry relative="1" x="0.402" as="geometry">
+              <Array as="points">
+                <mxPoint x="762" y="492" />
+              </Array>
+              <mxPoint x="879.6820285714289" y="492" as="sourcePoint" />
+              <mxPoint x="644.2778642857145" y="492" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Дәріханалар тізімі&#xa;(қолжетімділік)" plantUmlId="msg_15" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дәріханалар тізімі&#xa;(қолжетімділік)" id="xD6Xstj7F4duOIKthSjx-21">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-8" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-5">
+            <mxGeometry relative="1" x="0.607" as="geometry">
+              <Array as="points">
+                <mxPoint x="437" y="539" />
+              </Array>
+              <mxPoint x="644.2778642857145" y="539" as="sourcePoint" />
+              <mxPoint x="230.2551571428572" y="539" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Дәріхананы таңдап,&#xa;&quot;Брондау&quot; басу" plantUmlId="msg_16" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дәріхананы таңдап,&#xa;&quot;Брондау&quot; басу" id="xD6Xstj7F4duOIKthSjx-22">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-2" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-5">
+            <mxGeometry relative="1" x="-0.191" as="geometry">
+              <Array as="points">
+                <mxPoint x="144" y="586" />
+              </Array>
+              <mxPoint x="57.65" y="586" as="sourcePoint" />
+              <mxPoint x="230.2551571428572" y="586" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Бронь жасау сұранысы&#xa;(рецепт ID, дәріхана, препарат)" plantUmlId="msg_17" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Бронь жасау сұранысы&#xa;(рецепт ID, дәріхана, препарат)" id="xD6Xstj7F4duOIKthSjx-23">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-5" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-8">
+            <mxGeometry relative="1" x="-0.474" as="geometry">
+              <Array as="points">
+                <mxPoint x="437" y="633" />
+              </Array>
+              <mxPoint x="230.2551571428572" y="633" as="sourcePoint" />
+              <mxPoint x="644.2778642857145" y="633" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Броньды сақтау" plantUmlId="msg_18" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Броньды сақтау" id="xD6Xstj7F4duOIKthSjx-24">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-8" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-9">
+            <mxGeometry relative="1" x="-0.518" as="geometry">
+              <Array as="points">
+                <mxPoint x="762" y="665" />
+              </Array>
+              <mxPoint x="644.2778642857145" y="665" as="sourcePoint" />
+              <mxPoint x="879.6820285714289" y="665" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Бронь ID" plantUmlId="msg_19" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Бронь ID" id="xD6Xstj7F4duOIKthSjx-25">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-9" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-8">
+            <mxGeometry relative="1" x="0.625" as="geometry">
+              <Array as="points">
+                <mxPoint x="762" y="697" />
+              </Array>
+              <mxPoint x="879.6820285714289" y="697" as="sourcePoint" />
+              <mxPoint x="644.2778642857145" y="697" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Бронь сәтті жасалды" plantUmlId="msg_20" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Бронь сәтті жасалды" id="xD6Xstj7F4duOIKthSjx-26">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-8" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-5">
+            <mxGeometry relative="1" x="0.597" as="geometry">
+              <Array as="points">
+                <mxPoint x="437" y="729" />
+              </Array>
+              <mxPoint x="644.2778642857145" y="729" as="sourcePoint" />
+              <mxPoint x="230.2551571428572" y="729" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Дәріханаға келіп,&#xa;рецепт пен броньды көрсету" plantUmlId="msg_21" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дәріханаға келіп,&#xa;рецепт пен броньды көрсету" id="xD6Xstj7F4duOIKthSjx-27">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-2" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-7">
+            <mxGeometry relative="1" x="-0.588" as="geometry">
+              <Array as="points">
+                <mxPoint x="294" y="776" />
+              </Array>
+              <mxPoint x="57.65" y="776" as="sourcePoint" />
+              <mxPoint x="530.5603142857144" y="776" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Рецептті тексеру&#xa;(жарамдылығы, сәйкестігі)" plantUmlId="msg_22" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Рецептті тексеру&#xa;(жарамдылығы, сәйкестігі)" id="xD6Xstj7F4duOIKthSjx-28">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-7" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-9">
+            <mxGeometry relative="1" x="-0.471" as="geometry">
+              <Array as="points">
+                <mxPoint x="705" y="823" />
+              </Array>
+              <mxPoint x="530.5603142857144" y="823" as="sourcePoint" />
+              <mxPoint x="879.6820285714289" y="823" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Рецепт және бронь мәліметтері" plantUmlId="msg_23" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Рецепт және бронь мәліметтері" id="xD6Xstj7F4duOIKthSjx-29">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-9" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-7">
+            <mxGeometry relative="1" x="0.321" as="geometry">
+              <Array as="points">
+                <mxPoint x="705" y="855" />
+              </Array>
+              <mxPoint x="879.6820285714289" y="855" as="sourcePoint" />
+              <mxPoint x="530.5603142857144" y="855" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Дәріні беру" plantUmlId="msg_24" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дәріні беру" id="xD6Xstj7F4duOIKthSjx-30">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-7" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-8">
+            <mxGeometry relative="1" x="-0.196" as="geometry">
+              <Array as="points">
+                <mxPoint x="579" y="887" />
+              </Array>
+              <mxPoint x="530.5603142857144" y="887" as="sourcePoint" />
+              <mxPoint x="644.2778642857145" y="887" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Алғаны туралы ақпаратты сақтау" plantUmlId="msg_25" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Алғаны туралы ақпаратты сақтау" id="xD6Xstj7F4duOIKthSjx-31">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-8" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-9">
+            <mxGeometry relative="1" x="-0.047" as="geometry">
+              <Array as="points">
+                <mxPoint x="762" y="919" />
+              </Array>
+              <mxPoint x="644.2778642857145" y="919" as="sourcePoint" />
+              <mxPoint x="879.6820285714289" y="919" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Сақталды" plantUmlId="msg_26" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Сақталды" id="xD6Xstj7F4duOIKthSjx-32">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-9" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-8">
+            <mxGeometry relative="1" x="0.606" as="geometry">
+              <Array as="points">
+                <mxPoint x="762" y="951" />
+              </Array>
+              <mxPoint x="879.6820285714289" y="951" as="sourcePoint" />
+              <mxPoint x="644.2778642857145" y="951" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Дәрі берілді&#xa;(QR-код расталды)" plantUmlId="msg_27" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Дәрі берілді&#xa;(QR-код расталды)" id="xD6Xstj7F4duOIKthSjx-33">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-7" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-2">
+            <mxGeometry relative="1" x="0.676" as="geometry">
+              <Array as="points">
+                <mxPoint x="294" y="998" />
+              </Array>
+              <mxPoint x="530.5603142857144" y="998" as="sourcePoint" />
+              <mxPoint x="57.65" y="998" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Хабарлама" plantUmlId="msg_28" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Хабарлама" id="xD6Xstj7F4duOIKthSjx-34">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-7" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-6">
+            <mxGeometry relative="1" x="-0.099" as="geometry">
+              <Array as="points">
+                <mxPoint x="481" y="1030" />
+              </Array>
+              <mxPoint x="530.5603142857144" y="1030" as="sourcePoint" />
+              <mxPoint x="439.5388857142858" y="1030" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Қабылдау бұзылған жағдайда&#xa;хабарлама жіберу" plantUmlId="msg_29" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Қабылдау бұзылған жағдайда&#xa;хабарлама жіберу" id="xD6Xstj7F4duOIKthSjx-35">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-6" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-5">
+            <mxGeometry relative="1" x="-0.043" as="geometry">
+              <Array as="points">
+                <mxPoint x="335" y="1077" />
+              </Array>
+              <mxPoint x="439.5388857142858" y="1077" as="sourcePoint" />
+              <mxPoint x="230.2551571428572" y="1077" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Ұсыныс / жаңа рецепт" plantUmlId="msg_30" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Ұсыныс / жаңа рецепт" id="xD6Xstj7F4duOIKthSjx-36">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-6" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-5">
+            <mxGeometry relative="1" x="0.185" as="geometry">
+              <Array as="points">
+                <mxPoint x="335" y="1109" />
+              </Array>
+              <mxPoint x="439.5388857142858" y="1109" as="sourcePoint" />
+              <mxPoint x="230.2551571428572" y="1109" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Хабарлама және ұсыныс" plantUmlId="msg_31" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="Хабарлама және ұсыныс" id="xD6Xstj7F4duOIKthSjx-37">
+          <mxCell edge="1" parent="xD6Xstj7F4duOIKthSjx-1" source="xD6Xstj7F4duOIKthSjx-5" style="endArrow=classic;endFill=1;endSize=9;html=1;edgeStyle=sequenceEdgeStyle;libavoidRouting=0;curved=0;rounded=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="xD6Xstj7F4duOIKthSjx-2">
+            <mxGeometry relative="1" x="-0.052" as="geometry">
+              <Array as="points">
+                <mxPoint x="144" y="1141" />
+              </Array>
+              <mxPoint x="230.2551571428572" y="1141" as="sourcePoint" />
+              <mxPoint x="57.65" y="1141" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Рецепт бойынша дәріні брондау және алу процесінің секвенс диаграммасы&#xa;(пациенттің қолында рецепт бар)" plantUmlId="title_36" plantUmlBaseStyle="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;" plantUmlBaseValue="Рецепт бойынша дәріні брондау және алу процесінің секвенс диаграммасы&#xa;(пациенттің қолында рецепт бар)" id="xD6Xstj7F4duOIKthSjx-38">
+          <mxCell parent="xD6Xstj7F4duOIKthSjx-1" style="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;" vertex="1">
+            <mxGeometry height="24" width="559.3143999999994" x="190.98381428571474" y="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
